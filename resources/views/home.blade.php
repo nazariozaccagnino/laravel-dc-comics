@@ -3,8 +3,14 @@
 @section('title', 'Home')
 
 @section('content')
-<main>
-    <h1>Home page</h1>
-</main>
+<div class="jumbo">
+    <img src="{{ Vite::asset('resources/img/jumbotron.jpg')}}" alt="jumbo">
+</div>
+<section>
+    <div class="container d-flex flex-wrap">
+        main cards
+    </div>
+
+</section>
 
 @endsection
