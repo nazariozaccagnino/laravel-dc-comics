@@ -15,6 +15,7 @@
         <p class="card-text">{{$comic->description}}</p>
         <p class="card-text"><small class="text-body-secondary">Sale date: {{$comic->sale_date}}</small></p>
       </div>
+      <a href="{{route('comics.index')}}" class="btn btn-primary btn-sm">Return</a>
     </div>
   </div>
 </div>

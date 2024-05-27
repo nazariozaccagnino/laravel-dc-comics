@@ -37,7 +37,17 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_form = $request->all();
+        $new_item = new Comic();
+        $new_item->title = $user_form['title'];
+        $new_item->description = $user_form['description'];
+        $new_item->thumb = $user_form['thumb'];
+        $new_item->price = $user_form['price'];
+        $new_item->series = $user_form['series'];
+        $new_item->sale_date = $user_form['sale_date'];
+        $new_item->type = $user_form['type'];
+        $new_item->save();
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -56,11 +66,12 @@ class ComicController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit');
+
     }
 
     /**
