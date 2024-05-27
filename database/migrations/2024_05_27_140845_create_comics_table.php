@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('series', 255);
             $table->date('sale_date');
             $table->string('type', 255);
-
             $table->timestamps();
 
         });

@@ -7,8 +7,11 @@
     <img src="{{ Vite::asset('resources/img/jumbotron.jpg')}}" alt="jumbo">
 </div>
 <section>
-    <div class="container d-flex flex-wrap">
-        main cards
+    <div class="container">
+        <div class="text-center">
+        The DC comics homepage
+
+        </div>
     </div>
 
 </section>
