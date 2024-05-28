@@ -3,8 +3,9 @@
 @section('title', $comic->title)
 
 @section('content')
-<section class="container">
-<div class="card mb-3">
+<section>
+  <div class="container p-3">
+<div class="card">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{$comic->thumb}}" class="img-fluid rounded-start" alt="...">
@@ -15,10 +16,12 @@
         <p class="card-text">{{$comic->description}}</p>
         <p class="card-text"><small class="text-body-secondary">Sale date: {{$comic->sale_date}}</small></p>
       </div>
+      <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary btn-sm">Edit Item</a>
       <a href="{{route('comics.index')}}" class="btn btn-primary btn-sm">Return</a>
       <a class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a>
     </div>
   </div>
+</div>
 </div>
 
 <!-- Invisible modal -->
@@ -26,17 +29,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete item</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        Are you sure?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
           @csrf
-          @method('DELETE');
+          @method('DELETE')
           <button type="submit" class="btn btn-danger">Yes, delete</button>
         </form>        
       </div>

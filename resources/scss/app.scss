@@ -9,6 +9,10 @@ $fa-font-path: "../webfonts" !default;
 
 @import "~bootstrap/scss/bootstrap.scss";
 
+section{
+    background-image: url(/resources/img/big-bground.jpg);
+
+}
 h1 {
     color: $text-color;
 }
@@ -26,13 +30,16 @@ main {
 }
 
 header {
-
+    padding-bottom: 20px;
     .navbar-nav .nav-link.active {
         font-weight: bold;
         color: $text-color;
     }
 }
 
+.form-label{
+    color: white;
+}
 .thumb {
     height: 400px;
 }
