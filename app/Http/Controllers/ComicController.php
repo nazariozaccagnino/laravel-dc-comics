@@ -33,7 +33,7 @@ class ComicController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function store(Request $request)
     {
@@ -47,7 +47,7 @@ class ComicController extends Controller
         $new_item->sale_date = $user_form['sale_date'];
         $new_item->type = $user_form['type'];
         $new_item->save();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('done', 'Item deleted!');
     }
 
     /**
@@ -100,11 +100,11 @@ class ComicController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+     * 
      */
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('alert', 'Item deleted!');
     }
 }

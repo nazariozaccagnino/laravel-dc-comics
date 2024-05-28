@@ -11,7 +11,8 @@ $fa-font-path: "../webfonts" !default;
 
 section{
     background-image: url(/resources/img/big-bground.jpg);
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 h1 {
     color: $text-color;

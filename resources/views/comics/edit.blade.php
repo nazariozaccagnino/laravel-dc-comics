@@ -33,12 +33,13 @@
         <input type="date" class="form-control" id="sale_date" name="sale_date" value="{{$comic->sale_date}}">
       </div>
       <div class="mb-3">
-        <label for="tyoe" class="form-label">Type</label>
+        <label for="type" class="form-label">Type</label>
         <input type="text" class="form-control" id="type" name="type" value="{{$comic->type}}">
       </div>
+      <div class="py-2">
       <button type="submit" class="btn btn-primary">Modify</button>
-      <a href="{{route('comics.index')}}" class="btn btn-primary">Return</a>
-
+      <a href="{{route('comics.index')}}" class="btn btn-secondary">Return</a>
+      </div>
     </form>
   </div>
 </section>

@@ -5,7 +5,17 @@
 @section('content')
 
 <section>
-    <div class="container d-flex">
+    <div class="container">
+    @if (session()->has('alert'))
+        <div class="alert alert-danger py-2" role="alert">
+            Item deleted!
+        </div>
+    @endif
+    @if (session()->has('done'))
+        <div class="alert alert-success py-2" role="alert">
+            Item added correctly!
+        </div>
+    @endif
         <div class="row row-cols-4 g-4 py-4">
             @foreach ($comics as $comic)           
                 <div class="col">
