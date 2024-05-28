@@ -70,7 +70,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        return view('comics.edit');
+        return view('comics.edit', compact('comic'));
 
     }
 
@@ -83,7 +83,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $user_form = $request->all();
+        $edit_item = Comic::find($comic->id);
+        $edit_item->title = $user_form['title'];
+        $edit_item->description = $user_form['description'];
+        $edit_item->thumb = $user_form['thumb'];
+        $edit_item->price = $user_form['price'];
+        $edit_item->series = $user_form['series'];
+        $edit_item->sale_date = $user_form['sale_date'];
+        $edit_item->type = $user_form['type'];
+        $edit_item->update();
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
